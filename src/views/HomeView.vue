@@ -22,14 +22,14 @@ const moviesList = ref()
 document.title = 'Home - Movie Library'
 onMounted(async () => {
   const response = await getNowPlayingMovies()
-  moviesList.value = response.slice(0, 3)
+  moviesList.value = response.slice(0, 4)
 })
 </script>
 
 <style lang="css">
 
 #home{
-  width:60%;
+  width:90%;
   align-self: center;
 }
  img{

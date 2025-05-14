@@ -13,9 +13,19 @@
     <div class="movie-info">
       <h1>{{ movie.title }}</h1>
       <p>{{ movie.overview }}</p>
-      <p>Rank : {{ movie.vote_average }} / 10</p>
+      <div v-if="movieURL" class="video-container">
+  <iframe
+    :src="movieURL.replace('watch?v=', 'embed/')"
+    frameborder="0"
+    allowfullscreen
+    title="Movie Trailer"
+  ></iframe>
+</div>
+      
+      <p id="rank">Rank : {{ movie.vote_average }} / 10</p>
       <p>Length : {{ movie.runtime }} minutes</p>
       <p>Release date : {{ movie.release_date }}</p>
+      
       <p v-if="movie.homepage">
         Official link : <a :href="movie.homepage">{{ movie.homepage }}</a>
       </p>
@@ -30,20 +40,45 @@ const props = defineProps({
 })
 
 import { onMounted, ref } from 'vue'
-import { getMovieDetails } from '@/services/MovieService.js'
+import { getMovieDetails , getMovieTrailer} from '@/services/MovieService.js'
 
 const movie = ref({})
+const movieURL= ref(null)
 
 onMounted(() => {
   getMovieDetails(props.id).then((response) => {
     movie.value = response
     document.title = `${response.title} - Details`
-  })
+  });
+  getMovieTrailer(props.id).then((response) => {
+    movieURL.value = response
+  });
 })
 </script>
 
 <style scoped>
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
 
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+iframe{
+  height: auto;
+}
+#smallInfo{
+  display: flex;
+  justify-content: space-between;
+}
 #movie-details{
   background-image: url('@/assets/images/background.png');
   padding:10px 0px;
@@ -53,7 +88,7 @@ onMounted(() => {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  max-width: 900px;
+  max-width: 90%;
   margin: 20px auto;
   padding: 20px;
   
@@ -63,9 +98,9 @@ onMounted(() => {
 }
 
 .movie-image {
-  width: 300px;
   border-radius: 8px;
-  flex-shrink: 0;
+  width: auto;
+  height: 90%;
 }
 
 .movie-info {
@@ -89,7 +124,7 @@ p {
   margin: 10px 0;
 }
 
-p:nth-of-type(2) {
+#rank {
   font-weight: bold;
   color: #ff9900;
 }

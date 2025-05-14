@@ -71,3 +71,14 @@ export async function getMovieDetails(movieId) {
   const data = await response.json()
   return data
 }
+
+export async function getMovieTrailer(movieId){
+  const res= await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?${apiKey}`);
+  const data = await res.json();
+  
+  const trailer = data.results.find(
+    video => video.type === 'Trailer' && video.site === 'YouTube'
+  );
+
+  return trailer ? `https://www.youtube.com/watch?v=${trailer.key}` : null;
+}
