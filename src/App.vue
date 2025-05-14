@@ -2,7 +2,7 @@
   <div class="layout">
     <header>
       <nav class="navbar">
-        <RouterLink to="/" class="home-link">Home</RouterLink>
+        <RouterLink to="/" class="home-link">Home Page</RouterLink>
         <SearchBar />
       </nav>
     </header>
@@ -81,7 +81,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
-  height: 100px;
+  height: 75px;
   background-color: rgb(3, 37, 65);
   color: white;
   font-family: Arial, sans-serif;

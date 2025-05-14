@@ -1,13 +1,22 @@
 <template>
   <div v-for="movie in props.movies" :key="movie.id" class="movie-poster">
-    <img
-      :src="
-        movie.poster_path
-          ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-          : 'https://placehold.co/350x500?text=Placeholder+Image'
-      "
-      :alt="`Movie Poster of ${movie.title}`"
-    />
+    <div class="poster-wrapper">
+  <img
+    :src="
+      movie.poster_path
+        ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+        : 'https://placehold.co/350x500?text=Placeholder+Image'
+    "
+    :alt="`Movie Poster of ${movie.title}`"
+  />
+ <div class="rating-wrapper">
+  <div :class="getRatingClass(movie.vote_average)">
+    <div class="rating-black">
+      <span class="rating-text">{{ movie.vote_average.toFixed(1) }}</span>
+    </div>
+  </div>
+</div>
+</div>
     <h2>{{ movie.title }}</h2>
     <p>Release date : {{ movie.release_date }}</p>
     <button @click="onSelect(movie)">See More</button>
@@ -25,9 +34,78 @@ const props = defineProps({
 function onSelect(movie) {
   router.push({ name: 'movie-details', params: { id: movie.id } })
 }
+
+function getRatingClass(note) {
+  if (note >= 7) return 'rating-green';
+  else if (note >= 4) return 'rating-yellow';
+  else return 'rating-red';
+}
 </script>
 
 <style lang="css" scoped>
+
+.poster-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.rating-wrapper {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.rating-text {
+  color: white; 
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.rating-green {
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating-yellow {
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating-red {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating-black {
+  width: 46px;
+  height: 46px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
 .movie-poster {
   display: flex;
   flex-direction: column;
