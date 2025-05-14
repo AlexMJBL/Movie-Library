@@ -87,6 +87,11 @@ function previousPage() {
 </script>
 
 <style lang="css" scoped>
+p{
+  color: black;
+  font-weight: 600;
+}
+
 .empty-info {
   display: flex;
   justify-content: center;
