@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import SearchBar from '@/components/SearchBar.vue'
 import { onMounted } from 'vue'
 import { useSearchStore } from '@/stores/searchStore'
+import Footer from '@/components/Footer.vue'
 
 const searchStore = useSearchStore()
 
@@ -12,18 +13,30 @@ onMounted(async () => {
 </script>
 
 <template>
+  
   <header>
     <nav class="navbar">
       <RouterLink to="/" class="home-link">Home</RouterLink>
+      
       <SearchBar />
     </nav>
   </header>
 
   <RouterView />
+
+  <Footer />
 </template>
 
 <style lang="css" scoped>
+
+header {
+  
+  font-family: Arial, sans-serif;
+  background-color:rgb(3, 37, 65);
+  height: 75px;
+}
 .navbar {
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,10 +47,10 @@ onMounted(async () => {
 .home-link {
   font-size: 1.2rem;
   text-decoration: none;
-  color: #000;
+  color: white;
 }
 
 .home-link:hover {
-  color: #007bff;
+  color: lightblue;
 }
 </style>

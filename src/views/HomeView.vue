@@ -1,16 +1,14 @@
 <template>
   <main>
-    <h1>The Movie Library</h1>
-    <p>
-      Thanks for using our database. We’re happy to provide you with information about your favorite
-      movies and series.Below, you can find movies
-    </p>
-    <p>
-      currently playing in theaters. You can also search for movies by title, genre, or release year
-      using our search function in the top right corner.
-    </p>
+    <div id="home">
+      
+    
+      <img src="@/assets/images/movie-lib-logo.png">
+    
     <div class="movies-container">
-      <MoviePoster :movies="moviesList" />
+      <MoviePoster v-if="moviesList" :movies="moviesList" />
+    </div>
+       
     </div>
   </main>
 </template>
@@ -29,12 +27,23 @@ onMounted(async () => {
 </script>
 
 <style lang="css">
+
+#home{
+  width:60%;
+  align-self: center;
+}
+ img{
+  height: 180px;
+ }
+
 main {
+  padding:20px 0px;
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-image: url("@/assets/images/background.png");
   text-align: center;
-  height: 85vh;
+  min-height: 85vh;
   display: flex;
+  
   flex-direction: column;
   justify-content: center;
 }
@@ -42,7 +51,24 @@ main {
 h1 {
   font-size: 2rem;
   margin: 15px 0px;
-  color: #000;
+  color: black;
+}
+
+#welcomeDiv {
+  
+  margin: 0px 20px;
+  padding: 20px;
+  
+  border: 1px solid black;
+  background-color:#cfd6dc;
+  border-radius: 12px;
+}
+
+#welcomeText {
+  font-size: 1.2rem;
+  color: #222;
+  margin: 5px 20px;
+  font-weight: 500;
 }
 
 .movies-container {

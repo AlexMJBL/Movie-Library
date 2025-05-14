@@ -54,7 +54,10 @@ function submitSearch() {
 </script>
 
 <style lang="css" scoped>
+
+
 form {
+  color: white;
   display: flex;
   align-items: center;
   justify-content: flex-end;

@@ -34,7 +34,7 @@ function onSelect(movie) {
   align-items: center;
   padding: 20px;
   text-align: center;
-  background-color: #fff;
+  background-color: #cfd6dc;
   border-radius: 12px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   transition:
@@ -61,12 +61,12 @@ function onSelect(movie) {
   font-size: 18px;
   font-weight: bold;
   margin: auto 0px;
-  color: #333;
+  color: black;
 }
 
 .movie-poster p {
   font-size: 14px;
-  color: #555;
+  color: #222;
   margin: auto 0px;
 }
 

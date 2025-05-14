@@ -1,4 +1,5 @@
 <template>
+  <div id="movie-details">
   <div v-if="movie" class="movie-container">
     <img
       class="movie-image"
@@ -19,6 +20,7 @@
         Official link : <a :href="movie.homepage">{{ movie.homepage }}</a>
       </p>
     </div>
+  </div>
   </div>
 </template>
 
@@ -41,14 +43,20 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
+#movie-details{
+  background-image: url('@/assets/images/background.png');
+  padding:10px 0px;
+}
 .movie-container {
+  background-color: #cfd6dc;
   display: flex;
   flex-direction: row;
   gap: 20px;
   max-width: 900px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #f9f9f9;
+  
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;

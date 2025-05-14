@@ -95,7 +95,7 @@ function previousPage() {
 }
 
 .search-page {
-  background-color: #f0f0f0;
+  background-image: url('@/assets/images/background.png');
 }
 
 .pagination-info {
@@ -113,7 +113,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 0px 0;
   padding-top: 20px;
 }
 
