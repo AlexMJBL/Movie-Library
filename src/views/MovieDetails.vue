@@ -14,13 +14,15 @@
       <h1>{{ movie.title }}</h1>
       <p>{{ movie.overview }}</p>
       <div v-if="movieURL" class="video-container">
-  <iframe
-    :src="movieURL.replace('watch?v=', 'embed/')"
-    frameborder="0"
-    allowfullscreen
-    title="Movie Trailer"
-  ></iframe>
-</div>
+          <iframe
+            width="100%"
+            height="315"
+            :src="movieURL.replace('watch?v=', 'embed/')"
+            frameborder="0"
+            allowfullscreen
+            title="Movie Trailer"
+          ></iframe>
+        </div>
       
       <p id="rank">Rank : {{ movie.vote_average }} / 10</p>
       <p>Length : {{ movie.runtime }} minutes</p>

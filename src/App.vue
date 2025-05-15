@@ -73,7 +73,7 @@ header {
 
 .content {
   flex: 1;
-  padding: 100px 20px 20px;
+  padding: 75px 0 0;
 }
 
 .footer {
