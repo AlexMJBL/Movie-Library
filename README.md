@@ -1,35 +1,28 @@
-# Movie-Library
+Je suis fier de présenter Movie Library, une application web responsive développée avec passion, qui permet de découvrir des films populaires, les classer par genre, voir les détails, bandes-annonces, et bien plus encore.
 
-This template should help get you started developing with Vue 3 in Vite.
+🧩 Fonctionnalités principales :
+Recherche de films en temps réel
 
-## Recommended IDE Setup
+Filtrage par genre
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Affichage des bandes-annonces YouTube
 
-## Customize configuration
+Informations détaillées (titre, synopsis, durée, note, date de sortie)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Gestion des erreurs et d’un affichage fallback (image par défaut si l’affiche n’est pas disponible)
 
-## Project Setup
+Interface claire et responsive, adaptée aux mobiles et ordinateurs
 
-```sh
-npm install
-```
+🛠️ Technologies utilisées :
+Vue.js 3 (Composition API) : pour la gestion dynamique de l’interface
 
-### Compile and Hot-Reload for Development
+JavaScript (ES6+) : logique de traitement et d’appel à l’API
 
-```sh
-npm run dev
-```
+HTML/CSS : structure et style de l’interface
 
-### Compile and Minify for Production
+The Movie Database API (TMDb) : pour récupérer les données des films
 
-```sh
-npm run build
-```
+Vite : pour le bundling rapide et le développement local
 
-### Lint with [ESLint](https://eslint.org/)
+Ce projet m’a permis d’approfondir mes compétences en développement frontend moderne, d’optimiser l’interaction avec une API externe et de perfectionner mes pratiques UI/UX.Je suis fier de présenter Movie Library, une application web responsive développée avec passion, qui permet de découvrir des films populaires, les classer par genre, voir les détails, bandes-annonces, et bien plus encore. 🧩 Fonctionnalités principales : Recherche de films en temps réel Filtrage par genre Affichage des bandes-annonces YouTube Informations détaillées (titre, synopsis, durée, note, date de sortie) Gestion des erreurs et d’un affichage fallback (image par défaut si l’affiche n’est pas disponible) Interface claire et responsive, adaptée aux mobiles et ordinateurs 🛠️ Technologies utilisées : Vue.js 3 (Composition API) : pour la gestion dynamique de l’interface JavaScript (ES6+) : logique de traitement et d’appel à l’API HTML/CSS : structure et style de l’interface The Movie Database API (TMDb) : pour récupérer les données des films Vite : pour le bundling rapide et le développement local Ce projet m’a permis d’approfondir mes compétences en développement frontend moderne, d’optimiser l’interaction avec une API externe et de perfectionner mes pratiques UI/UX.
 
-```sh
-npm run lint
-```
